@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:musicapp/utils/apiConstants.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() => runApp(const MusicVisualizerApp());
@@ -46,7 +47,7 @@ class _MusicVisualizerScreenState extends State<MusicVisualizerScreen> {
   Future<void> _initializeAudioPlayer() async {
     try {
       await _audioPlayer.setUrl(
-          'https://codeskulptor-demos.commondatastorage.googleapis.com/descent/background%20music.mp3');
+          ApiConstants.BASE_URL+ApiConstants.LOCAL_URL);
 
       _totalDuration = _audioPlayer.duration ?? Duration.zero;
 
